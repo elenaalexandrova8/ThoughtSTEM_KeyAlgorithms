@@ -77,7 +77,7 @@
 >>>>>>> 1a6dfa7990b714384b731ca142535928716f81e3
 ; 11 is max difficulty of the puzzles encountered in the current dataset
 
-(define out-of 11)
+(define out-of 14)
 
 (define breaks '((0 4) (5 8) (9 15))) ;used as groupings in graph. must be 2 numbers ie 0-4, 5-8 etc. can have more groupings of two
 
