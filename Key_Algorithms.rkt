@@ -4,8 +4,51 @@
 
 (require plot) ;needed for any type of graph
 
-(define mylist (list '(and T(or F T(not T F))) ;list of a list - mylist contains data set from other group. should be updated with more puzzles as they are created
-
+(define mylist (list '(and T(or F T(not T F)))    ;list of a list - mylist contains data set from other group. should be updated with more puzzles as they are created                       '(or F(not T))
+                       '(and(and F F)(or T (and T T)))
+                       '(and(not (or T F))(and T (or F T)))
+                       '(not(not(and F(and (or T T)F))))
+                       '(not(not(not T)))
+                       '(not(not(not T)))
+                       '(and(or F(not F))(or T(not F)))
+                       '(or(not F) (and(and T T)F))
+                       '(or F(and F (or T T)))
+                       '(not(not(and(or F F)T)))
+                       '(or T(and T(or F T)))
+                       '(and(not(and T T))(not (and F F)))
+                       '(or(not T)((and(not F)(F))))
+                       '(or(not(not(T)))(not (not (F))))
+                       '(or (and T F)(and T T))
+                       '(and(not T)(or ((not) T)(and T T)))
+                       '(and(or (not T) T)(and T (not F)))
+                       '(and(not(not F))(not (not T)))
+                       '(not(and F(or F T)))
+                       '(and(or F (and(or F T)F))T)
+                       '(and T(or(and(not F) F)(not T)))
+                       '(or(and T T)(not T))
+                       '(not(or(and T F)(and F F)))
+                       '(or(not(not F))(not F))
+                       '(not(or(and(T)(or F T))(not F)))
+                       '(not(and T (not(or F (and T T)))))
+                       '(or(or T T)(or(or F F)T))
+                       '(and F(and F(and T T)))
+                       '(not(or(or F F)(and F F)))
+                       '(not(and T(and T(or T F))))
+                       '(or (not(not(not F)))(not(not(not T))))
+                       '(or T(not (and T F)))
+                       '(not(or(or F F))(and F(not F)))
+                       '(and(not F)(not(or T F)))
+                       '(not(or(or T F))(and T(not(and T T))))
+                       '(or(or(and T F)(or T F))(and(or T F)(not T)))
+                       '(and(not(or T)(and T F))(and(and T F)(or F)))
+                       '(not(and(or(not T)(not F))(and(not F)(not F))))                   
+                       '(not(or(and T F)(or T F))(and(not T F)(not T)))
+                       '(and(not F)(not(or T F)))
+                       '(or (and T F)(or (or (or T F))))
+                       '(not(or(and T F)(or T F))(and(not T F)(not T)))
+                       '(or(or(or F)(and F T))(and(and T F)(or F)))
+                       '(and(not (or T F))(and T (or F T)))
+                       '(not(not(and F(and (or T T)F))))
                        '(not(and(and T(and T (or F T)))))))
 
 (define (make-graph l)  ;defines the function to produce the entire graph with given list 'l'.
@@ -18,10 +61,7 @@
 
        (remove-duplicates l)));removes all duplicates i
 
-
-; 11 is max difficulty of the puzzles encountered in the current dataset
-
-(define out-of 11)
+(define out-of (last (sort levels <)));sort list and get the first node to determine max difficulty of the puzzles encountered in the current dataset
 
 (define breaks '((0 4) (5 8) (9 15))) ;used as groupings in graph. must be 2 numbers ie 0-4, 5-8 etc. can have more groupings of two
 
