@@ -1,16 +1,10 @@
 #lang racket
-<<<<<<< HEAD
 
 (require racket/list) ;needed library
 
 (require plot) ;needed for any type of graph
 
 (define mylist (list '(and T(or F T(not T F))) ;list of a list - mylist contains data set from other group. should be updated with more puzzles as they are created
-=======
-(require racket/list)
-(require plot)
-(define mylist (list '(and T(or F T(not T F)))
->>>>>>> 1a6dfa7990b714384b731ca142535928716f81e3
                        '(or F(not T))
                        '(and(and F F)(or T (and T T)))
                        '(and(not (or T F))(and T (or F T)))
@@ -57,7 +51,6 @@
                        '(and(not (or T F))(and T (or F T)))
                        '(not(not(and F(and (or T T)F))))
                        '(not(and(and T(and T (or F T)))))))
-<<<<<<< HEAD
 
 (define levels ;define levels as a list to save results of lambda function below
 
@@ -68,16 +61,9 @@
        (remove-duplicates mylist)));removes all duplicates i
 
 
-=======
-(define levels
-(map (lambda (i)
-         (length (flatten i)))
-       (remove-duplicates mylist)))
-;(define levels (list '1 '1 '2 '3 '3 '3 '4 '4 '4 '4 '6 '10 '10 '10 '10 '10))
->>>>>>> 1a6dfa7990b714384b731ca142535928716f81e3
 ; 11 is max difficulty of the puzzles encountered in the current dataset
 
-(define out-of 14)
+(define out-of 11)
 
 (define breaks '((0 4) (5 8) (9 15))) ;used as groupings in graph. must be 2 numbers ie 0-4, 5-8 etc. can have more groupings of two
 
@@ -109,7 +95,7 @@
 
   (buckets levels)))
 
- #:out-file "hist.png" ;additional info, how to name X-axis, Y-axis, etc
+ #:out-file "hist.png" ;additional info, how to name title, x-axis, Y-axis, etc
 
 #:title "Plot of difficulty ratings and amount it occurs"
 
